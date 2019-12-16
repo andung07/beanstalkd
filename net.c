@@ -156,7 +156,7 @@ make_unix_socket(char *path)
     addr.sun_family = AF_UNIX;
     if (strlen(path) > maxlen) {
         warnx("socket path %s is too long (%ld characters), where maximum allowed is %ld",
-              path, strlen(path), maxlen);
+              path, (long)strlen(path), (long)maxlen);
         return -1;
     }
     strncpy(addr.sun_path, path, maxlen);
